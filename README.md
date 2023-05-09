@@ -111,7 +111,7 @@ const Home = () => {
 };
 
 
-### Map
+## Map
 
 jsx
 {
@@ -134,7 +134,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-### Linkando a API
+## Linkando a API
 
 const { default: axios } = require("axios");
 
@@ -156,3 +156,24 @@ export default apiDeputados;
                 </Card.Text>
               </Card.Body>
             </Card>
+
+## Exemplo de Tabela
+
+<Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Descrição</th>
+                  <th>Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                {despesa.map((item) => (
+                  <tr>
+                    <td>{new Date(item.dataDocumento).toLocaleDateString()}</td>
+                    <td>{item.tipoDespesa}</td>
+                    <td>R${item.valorLiquido.toFixed(2)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
