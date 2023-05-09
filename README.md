@@ -119,7 +119,7 @@ jsx
 }
 
 
-### getServerSideProps
+### getServerSideProps - Chamando a rota
 
 > Substitui o uso do useEffect
 
@@ -143,3 +143,16 @@ const apiDeputados = axios.create({
 });
 export default apiDeputados;
 
+## Exemplo de CARD 
+
+<Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={deputados.ultimoStatus.urlFoto} />
+              <Card.Body>
+                <Card.Title>{deputados.ultimoStatus.nome}</Card.Title>
+                <Card.Text>
+                  Partido: {deputados.ultimoStatus.siglaPartido}
+                  <br />
+                  UF do Partido: {deputados.ultimoStatus.siglaUf}
+                </Card.Text>
+              </Card.Body>
+            </Card>
