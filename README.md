@@ -133,3 +133,13 @@ export async function getServerSideProps(context) {
     props: { filmes }, // will be passed to the page component as props
   };
 }
+
+### Linkando a API
+
+const { default: axios } = require("axios");
+
+const apiDeputados = axios.create({
+  baseURL: "https://dadosabertos.camara.leg.br/api/v2",
+});
+export default apiDeputados;
+
